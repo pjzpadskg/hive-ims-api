@@ -1,0 +1,1 @@
+{"name":"sbt","version":"1.11.1","bspVersion":"2.1.0-M1","languages":["scala"],"argv":["/Users/pjmsantos/.asdf/installs/java/corretto-21.0.1.12.1/bin/java","-Xms100m","-Xmx100m","-classpath","/Users/pjmsantos/.asdf/installs/sbt/1.9.7/bin/sbt-launch.jar","-Dsbt.script=/Users/pjmsantos/.asdf/installs/sbt/1.9.7/bin/sbt","xsbt.boot.Boot","-bsp"]}
