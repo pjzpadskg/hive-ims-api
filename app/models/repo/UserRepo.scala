@@ -20,7 +20,7 @@ class UserRepo @Inject()
 
   private final class Users(t: Tag) extends Table[User](t, "USERS") {
     def id = column[UUID]("ID", O.PrimaryKey)
-    def username = column[String]("EMAIL", O.Length(50), O.PrimaryKey)
+    def username = column[String]("USERNAME", O.Length(50), O.Unique)
     def name = column[String]("NAME", O.Length(255))
     def password = column[String]("PASSWORD", O.Length(50))
     def * = (id, username, name, password).mapTo[User]
