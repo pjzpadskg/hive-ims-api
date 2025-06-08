@@ -7,7 +7,7 @@ import scala.concurrent.{ Future, ExecutionContext }
 import play.api.db.slick.DatabaseConfigProvider
 import slick.jdbc.PostgresProfile
 import domain.User
-import dtos.UserCreate
+import dtos.UserCredentials
 
 @Singleton
 class UserRepo @Inject()
@@ -30,7 +30,7 @@ class UserRepo @Inject()
 
   def create(user: User): Future[Int] = db.run(Table += user)
 
-  def get(user: UserCreate): Future[Option[User]] = db.run(
+  def get(user: UserCredentials): Future[Option[User]] = db.run(
     Table
       .filter(u => u.username === user.username && u.password === user.password)
       .result
