@@ -9,6 +9,7 @@ case class UserCreate (
   username: String,
   password: String
 ) {
+  def toCredentials: UserCredentials = UserCredentials(username, password)
   def toUser: User = User(username, name, password)
 }
 
@@ -16,7 +17,7 @@ object UserCreate:
   def unapply(u: UserCreate): Option[(String, String, String)] =
     Some(u.name, u.username, u.password)
 
-  val form: Form[UserCreate] = Form(
+  lazy val form: Form[UserCreate] = Form(
     mapping(
       "name" -> nonEmptyText,
       "username" -> nonEmptyText,
