@@ -1,1 +1,3 @@
-POST  /users  controllers.UserController.create
+POST    /users                controllers.UserController.create
+POST    /users/sessions       controllers.SessionController.create
+DELETE  /users/sessions       controllers.SessionController.delete
